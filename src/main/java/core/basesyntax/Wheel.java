@@ -2,11 +2,10 @@ package core.basesyntax;
 
 import java.util.Objects;
 
-public class Wheel implements Cloneable{
+public class Wheel implements Cloneable {
     private int radius;
 
     //implement this class
-
 
     public Wheel(int radius) {
         this.radius = radius;
@@ -21,7 +20,7 @@ public class Wheel implements Cloneable{
     }
 
     @Override
-    protected Wheel clone(){
+    protected Wheel clone() {
         try {
             return (Wheel) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -31,7 +30,9 @@ public class Wheel implements Cloneable{
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Wheel wheel = (Wheel) o;
         return radius == wheel.radius;
     }
